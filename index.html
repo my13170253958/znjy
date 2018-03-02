@@ -1,0 +1,3940 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>零网</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/sm.min.css">
+		<link rel="stylesheet" href="css/sm-extend.min.css">
+		<link rel="stylesheet" href="css/xcConfirm_web.css" />
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/font.css">
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css">
+		<script src="js/common.js"></script>
+	</head>
+	<body>
+		<!--分页-->
+		<div class="page-group">
+			<!--登录页面-->
+			<div class="page" id="login">
+				<div class="pic">
+					<a href="#shouye">取消</a>
+					<img src="images/login_01.jpg" alt="" />
+				</div>
+				<!--左右两边留空白-->
+				<div class="content-padded">
+					<div class="list-block">
+						<ul>
+							<!-- Text inputs -->
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-name"></i></div>
+									<div class="item-inner">
+										<div class="item-title label" >手机号</div>
+										<div class="item-input">
+											<input type="text" placeholder="" id="phone">
+										</div>
+									</div>
+								</div>
+							</li>
+							<hr />
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-email"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">密码</div>
+										<div class="item-input">
+											<input type="password" id="password" placeholder="">
+										</div>
+									</div>
+								</div>
+							</li>
+							<hr />
+							<li>
+								<div class="item-content">
+									<div class="item-media"><i class="icon icon-form-password"></i></div>
+									<div class="item-inner">
+										<div class="item-title label">验证码</div>
+										<div class="item-input">
+											<input type="password" placeholder="" id="yzm">
+											<img class="yanzhengma" onclick="javascript:yanzhengma(this);" src="http://apistore.51daniu.cn/rest/index.php?c=index&amp;a=checkcode&amp;t=1467090973" alt="">
+											 
+										</div>
+									</div>
+								</div>
+							</li>
+							<hr />
+						</ul>
+						<a onclick="login()">马上登录</a>
+					</div>
+				</div>
+			</div>
+			<!--首页-->
+			<div class="page page-current" id="shouye">
+				<!--底部导航-->
+				<nav class="bar bar-tab">
+					<a class="tab-item  active" href="#shouye">
+						<span class="icon icon-home"></span>
+						<span class="tab-label">首页</span>
+					</a>
+					<a class="tab-item " href="#faxian" onclick="faxian_notice()">
+						<span class="icon icon-search"></span>
+						<span class="tab-label">发现</span>
+						<!--提示图标-->
+						<!--<span class="badge">2</span>-->
+					</a>
+					<a class="tab-item " href="#yingyong" >
+						<span class="icon icon-app"></span>
+						<span class="tab-label">应用</span>
+					</a>
+					<a class="tab-item " onclick="mine()" href="#wode">
+						<span class="icon icon-card"></span>
+						<span class="tab-label">我的</span>
+					</a>
+				</nav>
+				<header class="bar bar-nav">
+					<h1 class="title">零网</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="banner" id="sybanner">
+							<!--<div class="logo"></div>
+							<p>零网2.0</p>-->
+							<div class="word">
+								<!--<img src="images/zi.png" />-->
+								<a href="#login" id="login-status">登录零网</a>
+							</div>
+							<!--<video id="shouye_banner" src="images/5.mp4" width="100%" height="" autoplay loop="loop" -webkit-playsinline webkit-playsinline poster="images/video.png">
+								网速较差，视频走丢了......
+							</video>-->
+						</div>
+						<div class="fenlei">
+							<div class="jiankang">
+								<h2>健康大数据</h2>
+								<p>对学生的健康和体能进行管理存储和分析</p>
+								<img src="images/icon-1.png" />
+							</div>
+							<div class="guanli">
+								<h2>高效管理</h2>
+								<p>老师根据学生的成绩和表现实行更有效的教学</p>
+								<img src="images/icon-2.png" />
+							</div>
+							<div class="hudong">
+								<h2>家长互动</h2>
+								<p>促进家长老师之间沟通让孩子更好的学习生活</p>
+								<img src="images/icon-3.png" alt="" />
+							</div>
+							<div class="yingyong">
+								<h2>多元应用</h2>
+								<p>对不同的平台用户可使用不同的多元化应用</p>
+								<img src="images/icon-4.png" alt="" />
+							</div>
+						</div>
+						<h2>您是？</h2>
+						<h3>无论您是谁，我们都将为您提供多元化应用</h3>
+						<div class="xueshen list">
+							<div>
+								<span><a data_sign="student" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_student&a=index',this)" >课程表</a></span>
+								<span><a data_sign="student" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_student&a=index',this)" >成绩查询</a></span>
+							</div>
+							<img src="images/xueshen.png" />
+						</div>
+						<div class="jiazhang list">
+							<div>
+								<span><a data_sign="parent" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_parent&a=index',this)">子女信息</a></span>
+								<span><a data_sign="parent" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_parent&a=index',this)">成绩查询</a></span>
+								<span><a data_sign="parent" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_parent&a=index',this)">课程表</a></span>
+								<span><a data_sign="parent" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_parent&a=index',this)" >交流平台</a></span>
+							</div>
+							<img src="images/jiazhang.png" />
+						</div>
+						<div class="jiaoyuju list">
+							<div>
+								<span><a data_sign="gov" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_gov&a=index',this)">权限管理</a></span>
+								<span><a data_sign="gov" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_gov&a=index',this)"  >资料审核</a></span>
+								<span><a data_sign="gov" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_gov&a=index',this)">数据统计</a></span>
+							</div>
+							<img src="images/jiaoyuju.png" />
+						</div>
+						<div class="laoshi list">
+							<div >
+								<span><a data_sign="teacher" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_teacher&a=index',this)">办公权限</a></span>
+              					<span><a data_sign="teacher" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_teacher&a=index',this)">教务系统</a></span>
+              					<span><a data_sign="teacher" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_teacher&a=index',this)">学号管理</a></span>
+              					<span><a data_sign="teacher" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_teacher&a=index',this)">资料管理</a></span>
+              					<span><a data_sign="teacher" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_teacher&a=index',this)" >健康档案管理</a></span>
+              					<span><a data_sign="teacher" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_teacher&a=index',this)" >数据统计</a></span>
+							</div>
+							<img src="images/laoshi.png" />
+						</div>
+						<div class="xiaoguanli list">
+							<div>
+								<span><a data_sign="school" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)">权限管理</a></span>
+              					<span><a data_sign="school" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)"  >办公系统</a></span>
+              					<span><a data_sign="school" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)"  >教务管理</a></span>
+              					<span><a data_sign="school" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)"  >学生管理</a></span>
+              					<span><a data_sign="school" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)"  >资料管理</a></span>
+              					<span><a data_sign="school" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)"  >健康档案管理</a></span>
+              					<span><a data_sign="school" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)"  >财务管理</a></span>
+							</div>
+							<img src="images/guanliyuan.png" />
+						</div>
+						<div class="video">
+							<img src="images/video_03.png" />
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!--发现-->
+			<div class="page" id="faxian">
+				<nav class="bar bar-tab">
+					<a class="tab-item  " href="#shouye">
+						<span class="icon icon-home"></span>
+						<span class="tab-label">首页</span>
+					</a>
+					<a class="tab-item  active" onclick="faxian_notice()" href="#faxian" >
+						<span class="icon icon-search"></span>
+						<span class="tab-label">发现</span>
+						<!--提示图标-->
+						<!--<span class="badge">2</span>-->
+					</a>
+					<a class="tab-item " href="#yingyong" >
+						<span class="icon icon-app"></span>
+						<span class="tab-label">应用</span>
+					</a>
+					<a class="tab-item "onclick="mine()" href="#wode">
+						<span class="icon icon-card"></span>
+						<span class="tab-label">我的</span>
+					</a>
+				</nav>
+				<header class="bar bar-nav">
+					<h1 class="title">发现</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="faxian_list">
+							<a onclick="fxjyj_more($('#fxjyj_more'))"><img src="images/faxian_jiaoyuju.png" /></a>
+							<a onclick="fxjyj_more($('#fxsch_more'))"><img src="images/faxian_xuexiao.png" /></a>
+							<a href="javascript:;" id="fxstu_more" type="3"><img src="images/faxian_banji.png" /></a>
+						</div>
+						<ul>
+							<li class="information_jiaoyuju">
+								<h2>教育局公告</h2>
+								<p>
+									<a onclick="fxjyj_more($('#fxjyj_more'))" id="fxjyj_more" type="">更多></a>
+								</p>
+								<ul id="jiaoyuju_notice">
+									<!--<li>中考倒计时23天，南京三万考生备战高考</li>-->
+								</ul>
+							</li>
+							<li class="information_xuexiao">
+								<h2>学校公告</h2>
+								<p>
+									<a href="" id="fxsch_more" onclick="fxjyj_more($('#fxsch_more'))"  type="">更多></a>
+								</p>
+								<ul id="sch_notice">
+									<!--<li>中考倒计时23天，南京三万考生备战高考</li>-->
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--发现  教育局-->
+			<div class="page" id="faxian_jiaoyuju">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#faxian"></a>
+					<a style="display:none" class="icon icon-edit pull-right" href="#faxian_fabu"></a>
+					<h1 class="title" id="more_title">标题</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="school_picker" style="display: none;">
+							<input id="school-picker" value="请选择学校" type="text" />
+						</div>
+						<!--搜索框-->
+						<div class="content-padded" style="display: none;">
+							<div class="searchbar row">
+								<div class="search-input col-80">
+									<label class="icon icon-search" for="search"></label>
+									<input type="search" id='search' placeholder='输入关键字...' />
+								</div>
+								<a class="button button-fill button-primary col-20">搜索</a>
+							</div>
+						</div>
+						<ul id="jyjgongao">
+							<!--<li>
+								<h2>全市中考倒计时23天，南京三万考生备战中考</h2>
+								<div class="row">
+									<div class="col-33 shijian">2017-06-18</div>
+									<div class="col-33 didian">浦口教育局</div>
+									<div class="col-33 pinglun">评论（<span>0</span>）</div>
+								</div>
+							</li>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--发现 发布公告界面-->
+			<!--<div class="page" id="faxian_fabu">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#faxian_jiaoyuju"></a>
+					<h1 class="title">发布公告</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<input placeholder="请输入公告标题" type="text" />
+						<textarea placeholder="请输入公告内容" name="" rows="" cols=""></textarea>
+						<div>
+							<div><img class="shangchuan" src="images/xuanzetupian.png" alt="" />
+							</div>
+							<div><img class="shangchuan" src="images/xuanzetupian.png" alt="" />
+							</div>
+							<div><img class="shangchuan" src="images/xuanzetupian.png" alt="" />
+							</div>
+						</div>
+						<p>支持PNG、JPG等图片格式，最多可上传三张</p>
+						<a>发布</a>
+					</div>
+				</div>
+			</div>-->
+			<!--发现 公告详情-->
+			<div id="faxian_xiangqing" class="page">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#faxian"></a>
+					<h1 class="title">详情页</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<h2 id="jyjxq_title">全市中考倒计时23天，南京三万考生备战中考</h2>
+						<h3 id="jyjxq_time">2017-06-20 江浦中学初三(1)班</h3>
+						<div id="jyjxq_content" class="content_detail">
+							<p>为答谢广大终端客户，真情回报各界朋友，11月11日，XXX将在美丽的XX召开公司成立以来的首次终端促销会，在此，我们诚挚邀请您出席我们的终端盛会!决战终</p>
+						</div>
+						<img id="jyjxq_picture" src="images/jianjietupian.png" alt="" />
+							<div col-50>上一篇：<span id="jyjxq_former"></span></div>
+							<div col-50>下一篇：<span id="jyjxq_later">中考复习计划</span></div>
+						<div class="pinlun" style="display: none;">
+							<h2>评论（<span id="jyjxq_count">20</span>）</h2>
+							<ul id="jyjxq_pllist">
+								<!--<li>
+									<div class="row">
+										<div class="col-50 who">
+											<p>1楼<span>张老师</span></p>
+										</div>
+										<div class="col-50 time">2017-10-06</div>
+									</div>
+									<p class="pinglun_content">这个复习计划有用么这个复习计划有用么？这个复习计划有用 么？这个复习计划有用么？这个复习计划有用么？这个。
+									</p>
+									<a>回复（<span>20</span>）</a>
+								</li>-->
+							</ul>
+							<h2>发表评论</h2>
+							<textarea placeholder="请输入评论内容" name="tdiary_content" id="tdiary_content" rows="" cols=""></textarea>
+							<a href="" onclick="tdiary_add()">提交</a>
+							<input type="hidden" class="no_id" name="no_id" value="<?php echo $_GET['id'];?>">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--发现  公告回复列表-->
+			<!--<div class="page" id="faxian_huifu" style="display: none;">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#faxian_xiangqing"></a>
+					<h1 class="title">回复列表</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div>
+							<div class="row">
+								<div class="col-50 who">
+									<p>1楼<span>张老师</span></p>
+								</div>
+								<div class="col-50 time">2017-10-06</div>
+							</div>
+							<p class="pinglun_content">这个复习计划有用么这个复习计划有用么？这个复习计划有用 么？这个复习计划有用么？这个复习计划有用么？这个。
+							</p>
+						</div>
+						<h2>回复评论列表</h2>
+						<ul>
+							<li>
+								<div class="row">
+									<div class="col-50 who"><span>张老师</span></div>
+									<div class="col-50 time">2017-10-06</div>
+								</div>
+								<p class="huifu_content">这个复习计划有用么这个复习计划有用么？这个复习计划有用 么？这个复习计划有用么？这个复习计划有用么？这个。
+								</p>
+								<a>回复</a>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-50 who"><span>张老师</span></div>
+									<div class="col-50 time">2017-10-06</div>
+								</div>
+								<p class="huifu_content">这个复习计划有用么这个复习计划有用么？这个复习计划有用 么？这个复习计划有用么？这个复习计划有用么？这个。
+								</p>
+								<a>回复</a>
+							</li>
+						</ul>
+						<h2>回复评论</h2>
+						<textarea placeholder="请输入回复内容" name="" rows="" cols=""></textarea>
+						<a>回复</a>
+					</div>
+				</div>
+			</div>-->
+			
+			<!--应用 首页-->
+			<div class="page" id="yingyong">
+				<header class="bar bar-nav">
+					<h1 class="title">应用</h1>
+				</header>
+				<!--底部导航-->
+				<nav class="bar bar-tab">
+					<a class="tab-item  " href="#shouye">
+						<span class="icon icon-home"></span>
+						<span class="tab-label">首页</span>
+					</a>
+					<a class="tab-item " href="#faxian" onclick="faxian_notice()">
+						<span class="icon icon-search"></span>
+						<span class="tab-label">发现</span>
+						<!--提示图标-->
+						<!--<span class="badge">2</span>-->
+					</a>
+					<a class="tab-item active" href="#yingyong" >
+						<span class="icon icon-app"></span>
+						<span class="tab-label">应用</span>
+					</a>
+					<a class="tab-item " href="#wode" onclick="mine()">
+						<span class="icon icon-card"></span>
+						<span class="tab-label">我的</span>
+					</a>
+				</nav>
+				<div class="content">
+					<div class="content-block">
+						<div class="swiper-container swiper-container1" style="margin-bottom: 0.5rem;padding-bottom: 0;">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="images/yingyong_02.png"></div>
+								<div class="swiper-slide"><img src="images/yingyong_02.png"></div>
+								<div class="swiper-slide"><img src="images/yingyong_02.png"></div>
+							</div>
+							<!-- Add Pagination -->
+							<div class="swiper-pagination"></div>
+						</div>
+						<div class="yingyong_fenlei">
+							<a data_sign="student" data_enter="yingyong" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_student&a=index',this)"><img src="images/yingyong_05.png" alt="" /></a>
+							<a data_sign="parent" data_enter="yingyong" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_parent&a=index',this)"><img src="images/yingyong_07.png" alt="" /></a>
+							<a data_sign="gov" data_enter="yingyong" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_gov&a=index',this)"><img src="images/yingyong_11.png" alt="" /></a>
+							<a data_sign="teacher" data_enter="yingyong" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_teacher&a=index',this)"><img src="images/yingyong_12.png" alt="" /></a>
+							<a data_sign="school" data_enter="yingyong" onclick="queren('http://www.lwjiaoyu.com/mweb/index.php?c=appstore_school&a=index',this)"  ><img src="images/yingyong_15.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--应用 学生-->
+			<!--<div class="page yy" id="yingyong_xuesheng" style="display: none;">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong"></a>
+					<h1 class="title">应用</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #8bc230;" class="iconfont icon-kechengbiao" ></i>
+								<p>课程表</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-mg-time-up" ></i>
+								<p>考勤</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-chengji" ></i>
+								<p>学生成绩</p>
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</div>-->
+			<!--应用 家长-->
+			<!--<div class="page yy" id="yingyong_jiazhang" style="display: none;">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong"></a>
+					<h1 class="title">应用</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul class="row">
+							<li class="col-25" id="jiazhang_banjixingxi">
+								<i style="color: #0f83d6;" class="iconfont icon-banji" ></i>
+								<p><a href="#yingyong_jiazhang_banjixingxi">子女班级信息</a></p>
+							</li>
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-dangan-copy" ></i>
+								<p><a href="">子女档案</a></p>
+							</li>
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-chengji" ></i>
+								<p>子女成绩</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-mg-time-up" ></i>
+								<p>课程表</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-xiaoxi" ></i>
+								<p><a href="yingyong_banjixingxi_jiangli">子女奖励</a></p>
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</div>-->
+			<!-- 家长 子女班级信息-->
+			<!--<div class="page yy" id="yingyong_jiazhang_banjixingxi">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_jiazhang"></a>
+					<h1 class="title">子女班级信息</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="200%">
+							
+							<thead>
+								
+								<tr>
+									<th>学号</th>
+									<th>子女姓名</th>
+									<th>电话</th>
+									<th>班级名称</th>
+									<th>住址</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>21334</td>
+									<td>端木春</td>
+									<td>15061986196</td>
+									<td>三<3></td>
+									<td>南京市溧水区石湫镇朱村98号</td>
+									<td><span>查看子女奖惩</span></td>
+								</tr>
+								<tr>
+									<td>21334</td>
+									<td>端木春</td>
+									<td>15061986196</td>
+									<td>三<3></td>
+									<td>南京市溧水区石湫镇朱村98号</td>
+									<td><span>查看子女奖惩</span></td>
+								</tr>
+								<tr>
+									<td>21334</td>
+									<td>端木春</td>
+									<td>15061986196</td>
+									<td>三<3></td>
+									<td>南京市溧水区石湫镇朱村98号</td>
+									<td><span>查看子女奖惩</span></td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>	-->
+			<!-- 家长 子女奖励-->
+			<!--<div class="page yy" id="yingyong_banjixingxi_jiangli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_jiazhang"></a>
+					<h1 class="title">子女奖励信息</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="200%">
+							<thead>
+								<tr>
+									<th colspan="6">子女信息<a href="#yingyong_jiazhang">返回列表</a></th>
+								</tr>
+								<tr>
+									<th>学号</th>
+									<th>子女姓名</th>
+									<th>电话</th>
+									<th>班级名称</th>
+									<th>住址</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>21334</td>
+									<td>端木春</td>
+									<td>15061986196</td>
+									<td>三<3></td>
+									<td>南京市溧水区石湫镇朱村98号</td>
+									<td><span>查看子女奖惩</span></td>
+								</tr>
+								<tr>
+									<td>21334</td>
+									<td>端木春</td>
+									<td>15061986196</td>
+									<td>三<3></td>
+									<td>南京市溧水区石湫镇朱村98号</td>
+									<td><span>查看子女奖惩</span></td>
+								</tr>
+								<tr>
+									<td>21334</td>
+									<td>端木春</td>
+									<td>15061986196</td>
+									<td>三<3></td>
+									<td>南京市溧水区石湫镇朱村98号</td>
+									<td><span>查看子女奖惩</span></td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>	-->
+
+			<!--应用 教育局-->
+			<!--<div class="page yy" id="yingyong_jiaoyuju" style="display: none;">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong"></a>
+					<h1 class="title">应用</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<h2>权限管理></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #8bc230;" class="iconfont icon-Ankerwebicon-" ></i>
+								<p>教育局管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f965b1;" class="iconfont icon-xuexiao" ></i>
+								<p>直属学校管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f4790f;" class="iconfont icon-class" ></i>
+								<p>部门管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-shaixuantubiaogaozhuanqu06" ></i>
+								<p>休假类型管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-gongjubao" ></i>
+								<p>教师职称管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-kechengbiao" ></i>
+								<p>课程类型管理</p>
+							</li>
+						</ul>
+						<h2>资料审核></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-book" ></i>
+								<p>发布公告</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-jiangli" ></i>
+								<p>查看教师奖惩记录</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-ziliao" ></i>
+								<p>查看教师工作</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-dangan-copy" ></i>
+								<p>查看教师备课</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fdad01;" class="iconfont icon-chengji" ></i>
+								<p>查看学生成绩</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f4790f;" class="iconfont icon-xunzhang" ></i>
+								<p>查看学生奖惩记录</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fe3551;" class="iconfont icon-zhentongline" ></i>
+								<p>查看学生防疫信息</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-xueshimao" ></i>
+								<p>查看资料</p>
+							</li>
+						</ul>
+						<h2>数据统计></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #f965b1;" class="iconfont icon-id" ></i>
+								<p>基本资料统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-qian" ></i>
+								<p>收入支出统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fe3551;" class="iconfont icon-banji" ></i>
+								<p>教职工统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f4790f;" class="iconfont icon-xuesheng1" ></i>
+								<p>学生统计人数</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fdad01;" class="iconfont icon-class" ></i>
+								<p>班级班额统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-xiaochetongji" ></i>
+								<p>校车情况统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-Ankerwebicon-" ></i>
+								<p>固定资产统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-xiaosheguanlitongji" ></i>
+								<p>学校校舍统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-wucan" ></i>
+								<p>学生晨午检统计</p>
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</div>-->
+			<!--应用 教职工-->
+			<!--<div class="page yy" id="yingyong_jiaozhigong" style="display: none;">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong"></a>
+					<h1 class="title">应用</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<h2>办公权限></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #8bc230;" class="iconfont icon-book" ></i>
+								<p>教师工作日志</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f965b1;" class="iconfont icon-ziliao" ></i>
+								<p>教师备课</p>
+							</li>
+							<li id="jiaozhigong_xiujiaguanli" class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-shaixuantubiaogaozhuanqu06" ></i>
+								<p>休假管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-tongzhi" ></i>
+								<p>班级通知管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-daochu" ></i>
+								<p>教师转校管理</p>
+							</li>
+						</ul>
+						<h2>教务系统></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #fe3551;" class="iconfont icon-mg-time-up" ></i>
+								<p>作息时间查看</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f4790f;" class="iconfont icon-kechengbiao" ></i>
+								<p>课程表查看</p>
+							</li>
+						</ul>
+						<h2>学生管理></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-xuesheng1" ></i>
+								<p>学生资料查看</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #8bc230;" class="iconfont icon-banji" ></i>
+								<p>班主任管理学生</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f965b1;" class="iconfont icon-chengji" ></i>
+								<p>学生成绩管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-jiangli" ></i>
+								<p>学生奖惩记录管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fdad01;" class="iconfont icon-xunzhang" ></i>
+								<p>学生奖惩记录查询</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-xiaoxi" ></i>
+								<p>学生建议查看</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f4790f;" class="iconfont icon-xueshimao" ></i>
+								<p>学生转出申请/查看</p>
+							</li>
+						</ul>
+						<h2>资料管理></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #f965b1;" class="iconfont icon-id" ></i>
+								<p>管理自己的证件</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-jiangli" ></i>
+								<p>查看教师奖惩记录</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f4790f;" class="iconfont icon-lingdai" ></i>
+								<p>班主任查看任课老师信息</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fdad01;" class="iconfont icon-tongzhi" ></i>
+								<p>查看教育局公告</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-Ankerwebicon-" ></i>
+								<p>查看学校公告</p>
+							</li>
+							
+						</ul>
+						<h2>健康档案管理></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #f4790f;" class="iconfont icon-tijian" ></i>
+								<p>学生体检记录查询</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-zhentongline" ></i>
+								<p>学生看病记录查询</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fec344;" class="iconfont icon-yisheng" ></i>
+								<p>学生防疫记录查询</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #f06efc;" class="iconfont icon-gongjubao" ></i>
+								<p>教师常规信息管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-ziliao" ></i>
+								<p>教师体检记录管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fdad01;" class="iconfont icon-book" ></i>
+								<p>教师看病记录管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #fe3551;" class="iconfont icon-class" ></i>
+								<p>教师防疫记录管理</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #8bc230;" class="iconfont icon-tianjiazijiedian" ></i>
+								<p>学生体检记录管理</p>
+							</li>
+						</ul>
+						<h2>数据统计></h2>
+						<ul class="row">
+							<li class="col-25">
+								<i style="color: #6380fd;" class="iconfont icon-qian" ></i>
+								<p>收入支出统计</p>
+							</li>
+							<li class="col-25">
+								<i style="color: #0f83d6;" class="iconfont icon-wucan" ></i>
+								<p>学生晨午检</p>
+							</li>	
+						</ul>
+					</div>	
+				</div>
+			</div>-->
+			<!-- 教职工休假申请-->
+			<!--<div class="page" id="yingyong_jiaozhigong_xiujiaguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_jiaozhigong"></a>
+					<h1 class="title">休假管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">请假类别</div>
+								<div class="col-75">
+									<input id="qingjialeibie" type="text" placeholder="请选择请假类别" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">请假事由</div>
+								<div class="col-75">
+									<textarea placeholder="请输入请假事由" name="" rows="4" ></textarea>
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">起始日期</div>
+								<div class="col-75">
+									<input id="xiujiakaishi" type="text" placeholder="请选择起始日期"  />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">截止日期</div>
+								<div class="col-75">
+									<input id="xiujiajieshu" type="text" placeholder="请选择截止日期"   />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">请假天数</div>
+								<div class="col-75">
+									<input type="number" placeholder="请输入请假天数" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">请假交接</div>
+								<div class="col-75">
+									<textarea placeholder="请输入请假交接" name="" rows="4" ></textarea>
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">审核人</div>
+								<div class="col-75">
+									<input id="qingjiashenheren" type="text" placeholder="请选择审核人" />
+								</div>
+							</li>
+						</ul>
+						<span>提交请假申请</span>
+					</div>
+				</div>
+			</div>-->
+			
+			<!--应用 学校管理员-->
+			<!--<div class="page yy" id="yingyong_xuexiaoguanliyuan" style="display: none;">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong"></a>
+					<h1 class="title">应用</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<h2>权限管理></h2>
+						<ul class="row">
+							<li class="col-25" id="xuexiaoguanliyuan_fenxiaoguanli">
+								<i style="color: #f06efc;" class="iconfont icon-xuexiao" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_fenxiaoguanli">分校管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_bumenguanli">
+								<i style="color: #1cdcb1;" class="iconfont icon-class" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_bumenguanli">部门管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_yonghuguanli">
+								<i style="color: #f4790f;" class="iconfont icon-ren" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_yonghuguanli">用户管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaozhigongtuixiuguanli">
+								<i style="color: #2eb9f4;" class="iconfont icon-Ankerwebicon-" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_jiaozhigongtuixiuguanli">教职工退休管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_tianjiaxuexiaoguanwangziliao">
+								<i style="color: #fdad01;" class="iconfont icon-ziliao" ></i>
+								<p>添加学校官网资料</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xiaocheguanli">
+								<i style="color: #0f83d6;" class="iconfont icon-xiaochetongji" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_xiaocheguanli">校车管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xiaosheguanli">
+								<i style="color: #6380fd;" class="iconfont icon-xiaosheguanlitongji" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_xiaosheguanl">校舍管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_zhuanruzhuanchushenhe">
+								<i style="color: #fe3551;" class="iconfont icon-jzyn4" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_zhuanruzhuanchushenhe">转入转出审核</a></p>
+							</li>
+						</ul>
+						<h2>办公系统></h2>
+						<ul class="row">
+							<li class="col-25" id="xuexiaoguanliyuan_xiujiaguanli">
+								<i style="color: #0f83d6;" class="iconfont icon-shaixuantubiaogaozhuanqu06" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_xiujiaguanli">休假管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xiujiashenhe">
+								<i style="color: #8bc230;" class="iconfont icon-mg-time-up" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_xiujiashenhe">休假审核</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaozhigongrizhichakan">
+								<i style="color: #2eb9f4" class="iconfont icon-book" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_jiaozhigongrizhichakan">教职工日志查看</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_banjitongzhiguanli">
+								<i style="color: #f06efc" class="iconfont icon-tongzhi" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_banjitongzhiguanli">班级通知管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_chakanjiaoshibeike">
+								<i style="color: #1cdcb1" class="iconfont icon-kechengbiao" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_chakanjiaoshibeike">查看教师备课</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshizhuanxiaoshenqing">
+								<i style="color: #fdad01;" class="iconfont icon-xuexiao" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_jiaoshizhuanxiaoshenqing">教师转校申请</a></p>
+							</li>
+						</ul>
+						<h2>教务管理></h2>
+						<ul class="row">
+							<li class="col-25" id="xuexiaoguanliyuan_banjiguanli">
+								<i style="color: #fe3551;" class="iconfont icon-banji" ></i>
+								<p>班级管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_shengbanguanli">
+								<i style="color: #2eb9f4;" class="iconfont icon-shengji" ></i>
+								<p>升班管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengtiaoban">
+								<i style="color: #8f7fe1;" class="iconfont icon-ren" ></i>
+								<p>学生调班</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_kechengguanli">
+								<i style="color: #8bc230;" class="iconfont icon-kechengbiao" ></i>
+								<p>课程管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshibeike">
+								<i style="color: #6380fd;" class="iconfont icon-book" ></i>
+								<p>教师备课</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_paikeguanli">
+								<i style="color: #f06efc;" class="iconfont icon-dangan-copy" ></i>
+								<p><a href="#yingyong_xuexiaoguanliyuan_xueshengjiangchengshenhe">排课管理</a></p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_kechengzongbiaochakan">
+								<i style="color: #f06efc;" class="iconfont icon-Ankerwebicon-" ></i>
+								<p>课程总表查看</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_zuoxishijianbiaochakan">
+								<i style="color: #1cdcb1;" class="iconfont icon-mg-time-up" ></i>
+								<p>作息时间表查看</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengjiangchengshenhe">
+								<i style="color: #f4790f;" class="iconfont icon-xunzhang" ></i>
+								<p>学生奖惩审核</p>
+							</li>
+						</ul>
+						<h2>学生管理></h2>
+						<ul class="row">
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengziliaoguanli">
+								<i style="color: #8bc230;" class="iconfont icon-banji" ></i>
+								<p>学生资料管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengziliaodaochu">
+								<i style="color: #6380fd;" class="iconfont icon-daochu" ></i>
+								<p>学生资料导出</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengchengjichaxun">
+								<i style="color: #2eb9f4;" class="iconfont icon-chengji" ></i>
+								<p>学生成绩查询</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengjiangchengjiluchakan">
+								<i style="color: #8f7fe1;" class="iconfont icon-xueshimao" ></i>
+								<p>学生奖惩记录查看</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshegjianyichakan">
+								<i style="color: #f06efc;" class="iconfont icon-xiaoxi" ></i>
+								<p>学生建议查看</p>
+							</li>
+						</ul>
+						<h2>资料管理></h2>
+						<ul class="row">
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshijiangchengjiluchaklan">
+								<i style="color: #0f83d6;" class="iconfont icon-jiangli" ></i>
+								<p>教师奖惩记录管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_suoyoujiaoshizhengshuguanli">
+								<i style="color: #1cdcb1;" class="iconfont icon-xunzhang" ></i>
+								<p>所有教师证书管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_guanlizijidezhengjian">
+								<i style="color: #f4790f;" class="iconfont icon-id" ></i>
+								<p>管理自己的证件</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_anquangongzuojilu">
+								<i style="color: #2eb9f4;" class="iconfont icon-dangan-copy" ></i>
+								<p>安全工作记录</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshigongzuorizhiguanli">
+								<i style="color: #fdad01;" class="iconfont icon-book" ></i>
+								<p>教师工作日志管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_chankanjiaoyujugonggao">
+								<i style="color: #6380fd;" class="iconfont icon-class" ></i>
+								<p>查看教育局公告</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_fabuxuexiaogonggao">
+								<i style="color: #f06efc;" class="iconfont icon-tongzhi" ></i>
+								<p>发布学校公告</p>
+							</li>
+						</ul>
+						<h2>健康档案管理></h2>
+						<ul class="row">
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshichangguixinxichaxun">
+								<i style="color: #2eb9f4;" class="iconfont icon-dangan-copy" ></i>
+								<p>教师常规信息查询</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshitijianjiluchaxun">
+								<i style="color: #f4790f;" class="iconfont icon-tianjiazijiedian" ></i>
+								<p>教师体检记录查询</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshikanbingjiluchaxun">
+								<i style="color: #fe3551;" class="iconfont icon-yisheng" ></i>
+								<p>教师看病记录查询</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jiaoshifangyijiluchaxun">
+								<i style="color: #0f83d6;" class="iconfont icon-tijian" ></i>
+								<p>教师防疫记录</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengtijianjiluchaxun">
+								<i style="color: #6380fd;" class="iconfont icon-zhentongline" ></i>
+								<p>学生体检记录查询</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengfangyijiluchaxun">
+								<i style="color: #8bc230;" class="iconfont icon-xuesheng1" ></i>
+								<p>学生防疫记录查询</p>
+							</li>
+							
+						</ul>
+						<h2>财务管理></h2>
+						<ul class="row">
+							<li class="col-25" id="xuexiaoguanliyuan_shouruzhichuchaxun">
+								<i style="color: #f965b1;" class="iconfont icon-lingdai" ></i>
+								<p>收入/支出申请</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_shouruzhichushenhe"> 
+								<i style="color: #2dbdf2;" class="iconfont icon-class" ></i>
+								<p>收入/支出审核</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_gudingzichanguanli">
+								<i style="color: #0f83d6;" class="iconfont icon-icon-test" ></i>
+								<p>固定资产管理</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_jibenzilaiotongji">
+								<i style="color: #ffb422;" class="iconfont icon-dangan-copy" ></i>
+								<p>基本资料统计</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_shouruzhichutongji">
+								<i style="color: #2dbdf2;" class="iconfont icon-qian" ></i>
+								<p>收入支出统计</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xueshengshutongji">
+								<i style="color: #6380fd;" class="iconfont icon-xuesheng1" ></i>
+								<p>学生数统计</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_banjibanetongji">
+								<i style="color: #fe3551;" class="iconfont icon-Ankerwebicon-" ></i>
+								<p>班级班额统计</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xiaocheqingkuangtongji">
+								<i style="color: #8f7fe1;" class="iconfont icon-xiaochetongji" ></i>
+								<p>校车情况统计</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_gudingzichantongji">
+								<i style="color: #8bc230;" class="iconfont icon-icon-test" ></i>
+								<p>固定资产统计</p>
+							</li>
+							<li class="col-25" id="xuexiaoguanliyuan_xuexiaoxiaoshetongji">
+								<i style="color: #f4790f;" class="iconfont icon-xiaosheguanlitongji" ></i>
+								<p>学校校舍统计</p>
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</div>-->
+			<!-- 学校管理员   分校管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_fenxiaoguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiafenxiao"></a>
+					<h1 class="title">分校管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="300%">
+							<thead>
+								
+								<tr>
+									<th>流水</th>
+									<th>学校名称</th>
+									<th>学校级别</th>
+									<th>省级名称</th>
+									<th>市级名称</th>
+									<th>区/县名称</th>
+									<th>乡/镇名称</th>
+									<th>村级名称</th>
+									<th>性质</th>
+									<th>创建时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>南华幼儿园</td>
+									<td>幼儿园</td>
+									<td>江西</td>
+									<td>九江</td>
+									<td>浔阳区</td>
+									<td></td>
+									<td></td>
+									<td>办公</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>南华幼儿园</td>
+									<td>幼儿园</td>
+									<td>江西</td>
+									<td>九江</td>
+									<td>浔阳区</td>
+									<td></td>
+									<td></td>
+									<td>办公</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加分校-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiafenxiao">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_fenxiaoguanli"></a>
+					<h1 class="title">添加分校</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">学校名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="学校名称" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">学校级别</div>
+								<div class="col-75">
+									<input  type="text" placeholder="学校级别" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">学校性质</div>
+								<div class="col-75">
+									<input  type="text" placeholder="学校性质"  />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">所在地区</div>
+								<div class="col-75">
+									<input type="text" placeholder="请选择地区"   />
+								</div>
+							</li>
+							
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   部门管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_bumenguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiabumen"></a>
+					<h1 class="title">部门管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="200%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>部门名称</th>
+									<th>所属机构</th>
+									<th>创建时间</th>
+									<th>操作</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>heheh</td>
+									<td>语音二外</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>heheh</td>
+									<td>语音二外</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加部门-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiabumen">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_bumenguanli"></a>
+					<h1 class="title">添加部门</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">所属机构</div>
+								<div class="col-75">
+									<input  type="text" placeholder="所属机构" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">部门名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="部门名称" />
+								</div>
+							</li>
+							
+							
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+<!-- 带搜索框 学校管理员   用户管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_yonghuguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiayonghu"></a>
+					<h1 class="title">用户管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">真实姓名</div>
+								<div class="col-60"><input type="text" placeholder="请输入" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">用户机构</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">用户角色</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-100">
+								<i>重置</i><i>搜索</i>
+							</div>
+						</div>
+						<div class="table">
+						<table width="300%">
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>用户名称</th>
+									<th>真实姓名</th>
+									<th>机构</th>
+									<th>类型</th>
+									<th>部门</th>
+									<th>角色</th>
+									<th>学历</th>
+									<th>职称</th>
+									<th>职责</th>
+									<th>创建时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>班主任</td>
+									<td>张三</td>
+									<td>育婴二外</td>
+									<td>学校</td>
+									<td>教育部</td>
+									<td>班主任</td>
+									<td>中专</td>
+									<td>高级教师</td>
+									<td>行政人员</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>班主任</td>
+									<td>张三</td>
+									<td>育婴二外</td>
+									<td>学校</td>
+									<td>教育部</td>
+									<td>班主任</td>
+									<td>中专</td>
+									<td>高级教师</td>
+									<td>行政人员</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>班主任</td>
+									<td>张三</td>
+									<td>育婴二外</td>
+									<td>学校</td>
+									<td>教育部</td>
+									<td>班主任</td>
+									<td>中专</td>
+									<td>高级教师</td>
+									<td>行政人员</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加用户-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiayonghu">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_yonghuguanli"></a>
+					<h1 class="title">添加用户资料</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">所属机构</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">部门名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">角色名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">工作职责</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">学历</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">用户名</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请输入用户名" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">手机号</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请输入手机号" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">用户密码</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请输入密码" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">真实姓名</div>
+								<div class="col-75">
+									<input  type="text" placeholder="真实姓名" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">出生日期</div>
+								<div class="col-75">
+									<input data-toggle='date'  type="text" placeholder="出生日期" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">教师职称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   教职工退休管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_jiaozhigongtuixiuguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">教职工退休管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">真实姓名</div>
+								<div class="col-60"><input type="text" placeholder="请输入" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">用户机构</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">用户角色</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-100">
+								<i>重置</i><i>搜索</i>
+							</div>
+						</div>
+						<div class="table">
+						<table width="300%">
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>用户名称</th>
+									<th>真实姓名</th>
+									<th>机构</th>
+									<th>部门</th>
+									<th>角色</th>
+									<th>类型</th>
+									<th>职称</th>
+									<th>创建时间</th>
+									<th>是否退休</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>shell</td>
+									<td>张三</td>
+									<td>育婴二外</td>
+									<td>教育部</td>
+									<td>班主任</td>
+									<td>学校</td>
+									<td>高级教师</td>
+									<td>2017-08-67</td>
+									<td>否</td>
+									<td>
+										<span>退休</span>
+										<span>不退休</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>shell</td>
+									<td>张三</td>
+									<td>育婴二外</td>
+									<td>教育部</td>
+									<td>班主任</td>
+									<td>学校</td>
+									<td>高级教师</td>
+									<td>2017-08-67</td>
+									<td>否</td>
+									<td>
+										<span>退休</span>
+										<span>不退休</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>shell</td>
+									<td>张三</td>
+									<td>育婴二外</td>
+									<td>教育部</td>
+									<td>班主任</td>
+									<td>学校</td>
+									<td>高级教师</td>
+									<td>2017-08-67</td>
+									<td>否</td>
+									<td>
+										<span>退休</span>
+										<span>不退休</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+<!-- 纯表格 学校管理员   校车管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_xiaocheguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiaxiaoche"></a>
+					<h1 class="title">校车管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="300%">
+							<thead>
+								
+								<tr>
+									<th>车牌号</th>
+									<th>保险单号</th>
+									<th>车检到期时间</th>
+									<th>限载人数</th>
+									<th>实载人数</th>
+									<th>司机</th>
+									<th>司机身份证号</th>
+									<th>随车管理员</th>
+									<th>随车手机</th>
+									<th>接送最远距离</th>
+									<th>每天接送次数</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>苏A86935</td>
+									<td>34324234324</td>
+									<td>2017-05-17</td>
+									<td>23</td>
+									<td>13</td>
+									<td>jo</td>
+									<td>320134189504091825</td>
+									<td>mark</td>
+									<td>15062376441</td>
+									<td>34KM</td>
+									<td>3</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>苏A86935</td>
+									<td>34324234324</td>
+									<td>2017-05-17</td>
+									<td>23</td>
+									<td>13</td>
+									<td>jo</td>
+									<td>320134189504091825</td>
+									<td>mark</td>
+									<td>15062376441</td>
+									<td>34KM</td>
+									<td>3</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加校车-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiaxiaoche">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_xiaocheguanli"></a>
+					<h1 class="title">添加校车</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">车牌号</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">保险单号</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">年检到期时间</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">限载人数</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">实载人数</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">校车司机</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">司机身份证</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">随车管理员</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">随车手机</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">最远距离</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">接送次数</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   校舍管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_xiaosheguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiaxiaoshe"></a>
+					<h1 class="title">校舍管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="300%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>校舍名称</th>
+									<th>面积</th>
+									<th>大类型</th>
+									<th>详细类型</th>
+									<th>创建人</th>
+									<th>创建时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>春花楼</td>
+									<td>130</td>
+									<td>办公楼</td>
+									<td>厕所</td>
+									<td>总管理员</td>
+									<td>2017-13-12</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>春花楼</td>
+									<td>130</td>
+									<td>办公楼</td>
+									<td>厕所</td>
+									<td>总管理员</td>
+									<td>2017-13-12</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加校舍-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiaxiaoshe">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_xiaosheguanli"></a>
+					<h1 class="title">添加校车</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">建筑名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">所属大类</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">所属子类</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">建筑面积</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">建成日期</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">描述</div>
+								<div class="col-75">
+									<textarea name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+							
+							
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   转入转出审核-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_zhuanruzhuanchushenhe">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">转入/转出审核</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">类型</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+						</div>
+						<div class="table">
+						<table width="300%">
+							<thead>
+								<tr>
+									<th>流水</th>
+									<th>姓名</th>
+									<th>身份</th>
+									<th>转出学校</th>
+									<th>转出学校审核</th>
+									<th>转入学校</th>
+									<th>转入学校审核</th>
+									<th>申请理由</th>
+									<th>申请日期</th>								
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>张三</td>
+									<td>学生</td>
+									<td>离二高</td>
+									<td>未审核</td>
+									<td>县中</td>
+									<td>通过</td>
+									<td>师姐那么大我想去看看</td>
+									<td>2017-15-16</td>							
+									<td>
+										<span>已审核</span>
+										<span>通过</span>
+										<span>不通过</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>张三</td>
+									<td>学生</td>
+									<td>离二高</td>
+									<td>未审核</td>
+									<td>县中</td>
+									<td>通过</td>
+									<td>师姐那么大我想去看看</td>
+									<td>2017-15-16</td>							
+									<td>
+										<span>已审核</span>
+										<span>通过</span>
+										<span>不通过</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>张三</td>
+									<td>学生</td>
+									<td>离二高</td>
+									<td>未审核</td>
+									<td>县中</td>
+									<td>通过</td>
+									<td>师姐那么大我想去看看</td>
+									<td>2017-15-16</td>							
+									<td>
+										<span>已审核</span>
+										<span>通过</span>
+										<span>不通过</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员   休假管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_xiujiaguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_zengjiaxiujia"></a>
+					<h1 class="title">休假管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="300%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>姓名</th>
+									<th>请假类别</th>
+									<th>请假事由</th>
+									<th>起始时间</th>
+									<th>截止时间</th>
+									<th>天数</th>
+									<th>交接内容</th>
+									<th>状态</th>
+									<th>审核人</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>徐校长</td>
+									<td>病假</td>
+									<td>213</td>
+									<td>2017-08-12</td>
+									<td>2017-06-07</td>
+									<td>2</td>
+									<td>1</td>
+									<td>未审核</td>
+									<td>徐校长</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>徐校长</td>
+									<td>病假</td>
+									<td>213</td>
+									<td>2017-08-12</td>
+									<td>2017-06-07</td>
+									<td>2</td>
+									<td>1</td>
+									<td>未审核</td>
+									<td>徐校长</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加休假-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_zengjiaxiujia">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_xiujiaguanli"></a>
+					<h1 class="title">增加休假申请</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">请假类别</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">请假事由</div>
+								<div class="col-75">
+									<textarea  name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">起始日期</div>
+								<div class="col-75">
+									<input data-toggle='date'  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">截止日期</div>
+								<div class="col-75">
+									<input data-toggle='date'  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">请假天数</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">假期交接</div>
+								<div class="col-75">
+									<textarea name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">审核人</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员   休假审核-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_xiujiashenhe">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">休假审核</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="300%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>姓名</th>
+									<th>请假类别</th>
+									<th>请假事由</th>
+									<th>起始时间</th>
+									<th>截止时间</th>
+									<th>天数</th>
+									<th>交接内容</th>
+									<th>状态</th>
+									<th>审核人</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>徐校长</td>
+									<td>病假</td>
+									<td>213</td>
+									<td>2017-08-12</td>
+									<td>2017-08-12</td>
+									<td>2</td>
+									<td>1</td>
+									<td>未审核</td>
+									<td>徐校长</td>
+									<td>
+										<span>已审核</span>
+										<span>通过</span>
+										<span>不通过</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>徐校长</td>
+									<td>病假</td>
+									<td>213</td>
+									<td>2017-08-12</td>
+									<td>2017-08-12</td>
+									<td>2</td>
+									<td>1</td>
+									<td>未审核</td>
+									<td>徐校长</td>
+									<td>
+										<span>已审核</span>
+										<span>通过</span>
+										<span>不通过</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员   教职工日志查看-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_jiaozhigongrizhichakan">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">教职工日志查看</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">标题</div>
+								<div class="col-60"><input type="text" placeholder="请输入" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">教师</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">工作类型</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">工作性质</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">开始时间</div>
+								<div class="col-60"><input data-toggle='date' type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">结束时间</div>
+								<div class="col-60"><input data-toggle='date' type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-100">
+								<i>重置</i><i>搜索</i>
+							</div>
+						</div>
+						<div class="table">
+						<table width="300%">
+							<thead>
+								<tr>
+									<th>流水</th>
+									<th>学校名称</th>
+									<th>教师名称</th>
+									<th>标题</th>
+									<th>类型</th>
+									<th>性质</th>
+									<th>完成情况</th>
+									<th>重要程度</th>
+									<th>详细说明</th>
+									<th>添加时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>育英二外</td>
+									<td>张三</td>
+									<td>放大</td>
+									<td>2</td>
+									<td>学校</td>
+									<td>未完成</td>
+									<td>2</td>
+									<td>的发挥地方</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>育英二外</td>
+									<td>张三</td>
+									<td>放大</td>
+									<td>2</td>
+									<td>学校</td>
+									<td>未完成</td>
+									<td>2</td>
+									<td>的发挥地方</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>育英二外</td>
+									<td>张三</td>
+									<td>放大</td>
+									<td>2</td>
+									<td>学校</td>
+									<td>未完成</td>
+									<td>2</td>
+									<td>的发挥地方</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 带搜索框 学校管理员   班级通知管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_banjitongzhiguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiabanjigonggao"></a>
+					<h1 class="title">班级通知管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">公告标题</div>
+								<div class="col-60"><input type="text" placeholder="" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">所属班级</div>
+								<div class="col-60"><input type="text" placeholder="所属班级" /></div>
+							</div>
+							<div class="col-100">
+								<i>重置</i><i>搜索</i>
+							</div>
+						</div>
+						<div class="table">
+						<table width="200%">
+							<thead>
+								<tr>
+									<th>流水</th>
+									<th>公告标题</th>
+									<th>发布人</th>
+									<th>所属班级</th>
+									<th>发布时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>你好啊</td>
+									<td>张三</td>
+									<td>三<2></td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看/修改</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>你好啊</td>
+									<td>张三</td>
+									<td>三<2></td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看/修改</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>你好啊</td>
+									<td>张三</td>
+									<td>三<2></td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看/修改</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加班级公告-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiabanjigonggao">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_banjitongzhiguanli"></a>
+					<h1 class="title">增加休假申请</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">标题</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							
+							<li class="row">
+								<div class="col-25">发布人</div>
+								<div class="col-75">
+									<input data-toggle='date'  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">所属班级</div>
+								<div class="col-75">
+									<input   type="text" placeholder="请选择" />
+								</div>
+							</li>
+							
+							<li class="row">
+								<div class="col-25">详细内容</div>
+								<div class="col-75">
+									<textarea name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+						
+							
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员   查看教师备课 教师列表-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_chakanjiaoshibeike">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">备课教师列表</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">学校名</div>
+								<div class="col-60"><input type="text" placeholder="" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">下属机构</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">总校</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">分校</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-100">
+								<i>重置</i><i>搜索</i>
+							</div>
+						</div>
+						<div class="table">
+						<table width="150%">
+							<thead>
+								<tr>
+									<th>流水</th>
+									<th>学校名称</th>
+									<th>教师备课总数</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>育英二外</td>
+									<td>23</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>育英二外</td>
+									<td>23</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>育英二外</td>
+									<td>23</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   教师备课列表-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_jiaoshibeikexiangxi">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_chakanjiaoshibeike"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiariji"></a>
+					<h1 class="title">教师备课详细列表</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">标题</div>
+								<div class="col-60"><input type="text" placeholder="" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">教师</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">开始时间</div>
+								<div class="col-60"><input data-toggle='date' type="text" placeholder="" /></div>
+							</div>
+							<div class="col-100">
+								<i>重置</i><i>搜索</i>
+							</div>
+						</div>
+						<div class="table">
+						<table width="300%">
+							<thead>
+								<tr>
+									<th>流水</th>
+									<th>学校名称</th>
+									<th>教师名称</th>
+									<th>标题</th>
+									<th>添加时间</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>育婴二外</td>
+									<td>张三</td>
+									<td>我饿了</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>育婴二外</td>
+									<td>张三</td>
+									<td>我饿了</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>育婴二外</td>
+									<td>张三</td>
+									<td>我饿了</td>
+									<td>2017-08-67</td>
+									<td>
+										<span>查看</span>
+									</td>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 查看备课日志详细-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_jiaoshibeikexaingxi">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_jiaoshibeikexiangxi"></a>
+					<h1 class="title">查看备课</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">标题</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">内容</div>
+								<div class="col-75">
+									<textarea name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+							
+						</ul>
+						
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   教师转校申请-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_jiaoshizhuanxiaoshenqing">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiashenqing"></a>
+					<h1 class="title">教师转校申请</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="300%">
+							<thead>
+								
+								<tr>
+									<th>流水</th>
+									<th>教师姓名</th>
+									<th>转出学校</th>
+									<th>转入学校</th>
+									<th>我方学校审核</th>
+									<th>对方学校审核</th>
+									<th>申请理由</th>
+									<th>申请日期</th>
+									
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>张三</td>
+									<td>啦啦啦中学</td>
+									<td>嘿嘿嘿中学</td>
+									<td>审核通过</td>
+									<td>审核未通过</td>
+									<td>太累啦</td>
+									<td>2017-08-16</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>张三</td>
+									<td>啦啦啦中学</td>
+									<td>嘿嘿嘿中学</td>
+									<td>审核通过</td>
+									<td>审核未通过</td>
+									<td>太累啦</td>
+									<td>2017-08-16</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加转校申请-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiashenqing">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_jiaoshizhuanxiaoshenqing"></a>
+					<h1 class="title">增加转校申请</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">转出学校</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">转入学校</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">申请理由</div>
+								<div class="col-75">
+									<textarea name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   年级管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_banjiguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">年级管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="150%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>年级名称</th>
+									<th>班级数量</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>三年级</td>
+									<td>2</td>
+									<td>
+										<span>查看班级</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>三年级</td>
+									<td>2</td>
+									<td>
+										<span>查看班级</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   班级管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_chakanbanji">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_banjiguanli"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiabanji"></a>
+					<h1 class="title">班级管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="200%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>所属年级</th>
+									<th>班级名称</th>
+									<th>班主任</th>
+									<th>类型</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>三年级</td>
+									<td>三<2></td>
+									<td>kai</td>
+									<td>幼稚园</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>三年级</td>
+									<td>三<2></td>
+									<td>kai</td>
+									<td>幼稚园</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加班级-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiabanji">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_chakanbanji"></a>
+					<h1 class="title">添加班级</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">所属年级</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">班级名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">班主任</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">入学年份</div>
+								<div class="col-75">
+									<input type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">描述</div>
+								<div class="col-75">
+									<textarea name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   升办管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_shengbanguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">班级管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="100%">
+							<thead>
+								
+								<tr>
+									<th>年级名称</th>
+									<th>班级数量</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>三年级</td>
+									<td>23</td>
+									<td>
+										<span>查看班级</span>
+									</td>
+								</tr>
+								<tr>
+									<td>三年级</td>
+									<td>23</td>
+									<td>
+										<span>查看班级</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						<br />
+						<span>全部班级升级</span>
+						<span>全部班级降级</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   班级查看-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_banjichakan">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_shengbanguanli"></a>
+					<h1 class="title">班级查看</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="200%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>入学时间</th>
+									<th>班级名称</th>
+									<th>班主任</th>
+									<th>学生数量</th>
+									<th>查看学生</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>2017-9-1</td>
+									<td>三<2></td>
+									<td>kai</td>
+									<td>23</td>
+									<td>
+										<span>查看学生</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2017-9-1</td>
+									<td>三<2></td>
+									<td>kai</td>
+									<td>23</td>
+									<td>
+										<span>查看学生</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 学校管理员   班级详细-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_banjixaingxi">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_banjichakan"></a>
+					<h1 class="title">班级详细</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="200%">
+							<thead>
+								
+								<tr>
+									<th>流水</th>
+									<th>姓名</th>
+									<th>入学时间</th>
+									<th>班级</th>
+									<th>性别</th>
+									<th>联系电话</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>刘先鹏</td>
+									<td>2017-09-01</td>
+									<td>三<2></td>
+									<td>男</td>
+									<td>213213213213</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>刘先鹏</td>
+									<td>2017-09-01</td>
+									<td>三<2></td>
+									<td>男</td>
+									<td>213213213213</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员   学生调班-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_xueshengtiaoban">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">学生调班</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="search row">
+							<div class="col-50 row">
+								<div class="col-40">真实姓名</div>
+								<div class="col-60"><input type="text" placeholder="请输入" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">年级</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-50 row">
+								<div class="col-40">班级</div>
+								<div class="col-60"><input type="text" placeholder="请选择" /></div>
+							</div>
+							<div class="col-100">
+								<i>重置</i><i>搜索</i>
+							</div>
+						</div>
+						<div class="table">
+						<table width="300%">
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>年级名称</th>
+									<th>班级名称</th>
+									<th>学生姓名</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>三年级</td>
+									<td>二班</td>
+									<td>刘强</td>
+									<td>
+										<span>换班</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>三年级</td>
+									<td>二班</td>
+									<td>刘强</td>
+									<td>
+										<span>换班</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>三年级</td>
+									<td>二班</td>
+									<td>刘强</td>
+									<td>
+										<span>换班</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 调班实际操作-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_genhuanbanji">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_xueshengtiaoban"></a>
+					<h1 class="title">跟换班级</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">所属年级</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">班级名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">学生姓名</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">转入年级</div>
+								<div class="col-75">
+									<input type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">转入班级</div>
+								<div class="col-75">
+									<input type="text" placeholder="请选择" />
+								</div>
+							</li>
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员   课程管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_kechengguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">课程管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="100%">
+							<thead>
+								
+								<tr>
+									<th>车牌号</th>
+									<th>保险单号</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>学前班</td>
+									<td>2</td>
+									<td>
+										<span>查看课程</span>
+									</td>
+								</tr>
+								<tr>
+									<td>学前班</td>
+									<td>2</td>
+									<td>
+										<span>查看课程</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员   课程列表-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_kechengliebiao">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_kechengguanli"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiakecheng"></a>
+					<h1 class="title">课程列表</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="100%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>课程名称</th>
+									<th>课程类型</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>数学</td>
+									<td>基本课程</td>
+									<td>
+										<span>修改</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>数学</td>
+									<td>基本课程</td>
+									<td>
+										<span>修改</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加课程-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiakecheng">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_xueshengtiaoban"></a>
+					<h1 class="title">添加课程</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">所属年级</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">课程名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">基本类型</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">描述</div>
+								<div class="col-75">
+									<textarea name="" rows="4" cols=""></textarea>
+								</div>
+							</li>
+							
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员   教师备课-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_jiaoshibeike">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">教师备课</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="100%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>年级名称</th>
+									<th>班级数量</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>学前班</td>
+									<td>2</td>
+									<td>
+										<span>查看班级</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>学前班</td>
+									<td>2</td>
+									<td>
+										<span>查看班级</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员   班级课程 班级列表 查看-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_banjikechengchakan">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_jiaoshibeike"></a>
+					<h1 class="title">班级课程查看</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="150%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>班级名称</th>
+									<th>类型</th>
+									<th>课程数量</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>三<1>班</td>
+									<td>普通班</td>
+									<td>2</td>
+									<td>
+										<span>教师备课</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>三<1>班</td>
+									<td>普通班</td>
+									<td>2</td>
+									<td>
+										<span>教师备课</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员   班级课程列表-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_banjikechenglebiao">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_banjikechengchakan"></a>
+					<h1 class="title">班级课程列表</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="100%">
+							<thead>
+								
+								<tr>
+									<th>编号</th>
+									<th>课程名称</th>
+									<th>任课老师</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>语文</td>
+									<td>jo</td>
+									<td>
+										<span>教师备课</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>语文</td>
+									<td>jo</td>
+									<td>
+										<span>教师备课</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 修改课程教师-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_xiugairenkejiaoshi">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_banjikechenglebiao"></a>
+					<h1 class="title">修改课程教师</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">所属年级</div>
+								<div class="col-75">
+									<input  type="text" placeholder="请选择" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">课程名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">任课教师</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员  排课管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_paikeguanli">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">排课管理</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="150%">
+							<thead>
+								
+								<tr>
+									<th>流水</th>
+									<th>年级名称</th>
+									<th>班级名称</th>
+									<th>班主任</th>
+									<th>班级类型</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>二年级</td>
+									<td>（1）班</td>
+									<td>李四</td>
+									<td>普通</td>
+									<td>
+										<span>排课</span>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>二年级</td>
+									<td>（1）班</td>
+									<td>李四</td>
+									<td>普通</td>
+									<td>
+										<span>排课</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员  具体排课-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_jutipaike">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_paikeguanli"></a>
+					<h1 class="title">二年级（1）班</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="250%">
+							<thead>
+								<tr>
+									<th></th>
+									<th>星期一</th>
+									<th>星期二</th>
+									<th>星期三</th>
+									<th>星期四</th>
+									<th>星期五</th>
+									<th>星期六</th>
+									<th>星期日</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>第一节课</td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+								</tr>
+								<tr>
+									<td>第二节课</td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+								</tr>
+								<tr>
+									<td>第三节课</td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+								</tr>
+								<tr>
+									<td>第四节课</td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+								</tr>
+								<tr>
+									<td>第五节课</td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+								</tr>
+								<tr>
+									<td>第六节课</td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+								</tr>
+								<tr>
+									<td>第七节课</td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+									<td><input type="text" /></td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						<br />
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员  排课管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_zuoxishijianbiaochakan">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<a class="iconfont icon-jia pull-right" href="#xuexiaoguanliyuan_tianjiazuoxishijian"></a>
+					<h1 class="title">作息时间表查看</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="150%">
+							<thead>
+								
+								<tr>
+									<th>名称</th>
+									<th>时间</th>
+									<th>排序</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>委屈</td>
+									<td>9：23-10：34</td>
+									<td>34</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>委屈</td>
+									<td>9：23-10：34</td>
+									<td>34</td>
+									<td>
+										<span>编辑</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<!--学校管理员 添加休假-->
+			<!--<div class="page iconlist" id="xuexiaoguanliyuan_tianjiazuoxishijian">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan_zuoxishijianbiaochakan"></a>
+					<h1 class="title">添加作息时间</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-25">名称</div>
+								<div class="col-75">
+									<input  type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">开始时间</div>
+								<div class="col-75">
+									<input   type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">结束时间</div>
+								<div class="col-75">
+									<input   type="text" placeholder="" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-25">排序</div>
+								<div class="col-75">
+									<input   type="text" placeholder="" />
+								</div>
+							</li>
+						</ul>
+						<span>提交</span>
+						<span>重置</span>
+						<span>返回</span>
+					</div>
+				</div>
+			</div>-->
+			<!-- 纯表格 学校管理员  排课管理-->
+			<!--<div class="page iconlist" id="yingyong_xuexiaoguanliyuan_xueshengjiangchengshenhe">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#yingyong_xuexiaoguanliyuan"></a>
+					<h1 class="title">学生奖罚审核</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="table">
+						<table width="250%">
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>受奖罚人</th>
+									<th>奖罚类型</th>
+									<th>奖罚原因</th>
+									<th>奖罚时间</th>
+									<th>审核状态</th>
+									<th>审核</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>12</td>
+									<td>张三</td>
+									<td>奖励</td>
+									<td>说过的话鸡啊三个等于</td>
+									<td>2017-03-07</td>
+									<td>未审核</td>
+									<td>
+										<span>通过</span>
+										<span>不通过</span>
+										<span>删除</span>
+									</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>张三</td>
+									<td>奖励</td>
+									<td>说过的话鸡啊三个等于</td>
+									<td>2017-03-07</td>
+									<td>未审核</td>
+									<td>
+										<span>通过</span>
+										<span>不通过</span>
+										<span>删除</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			
+			<!--我的  首页-->
+			<div class="page" id="wode">
+				<!--底部导航-->
+				<nav class="bar bar-tab">
+					<a class="tab-item  " href="#shouye">
+						<span class="icon icon-home"></span>
+						<span class="tab-label">首页</span>
+					</a>
+					<a class="tab-item " href="#faxian" onclick="faxian_notice()">
+						<span class="icon icon-search"></span>
+						<span class="tab-label">发现</span>
+						<!--提示图标-->
+						<!--<span class="badge">2</span>-->
+					</a>
+					<a class="tab-item " href="#yingyong" >
+						<span class="icon icon-app"></span>
+						<span class="tab-label">应用</span>
+					</a>
+					<a class="tab-item active" href="#wode" onclick="mine()">
+						<span class="icon icon-card"></span>
+						<span class="tab-label">我的</span>
+					</a>
+				</nav>
+				<header class="bar bar-nav">
+					<h1 class="title">我的</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<div class="wode_information row">
+							<div class="wode_img col-33">
+								<img src="images/sjpb.jpg" alt="" />
+							</div>
+							<div class="wode_word col-60">
+								<ul id="wode-info">
+									<li>姓名：<span>张三</span></li>
+									<li>手机：<span>******</span></li>
+									<li>所在学校：<span>****学校</span></li>
+								</ul>
+							</div>
+						</div>
+						<ul class="list-block">
+							<!--<a class="item-content item-link" href="#wode_bangdingyinghangka" style="display: none;">
+								<div class="item-media"><img src="images/bank.png" ></div>
+								<div class="item-inner">
+									<div class="item-title">绑定银行卡</div>
+								</div>
+							</a>
+							<a class="item-content item-link" href="#wode_jiatingdizhi" style="display: none;">
+								<div class="item-media"><img src="images/home.png" ></div>
+								<div class="item-inner">
+									<div class="item-title">家庭地址</div>
+								</div>
+							</a>-->
+							<a class="item-content item-link" href="#wode_jibenxinxi">
+								<div class="item-media"><img src="images/icon-2.png" class="icon-card" ></div>
+								<div class="item-inner">
+									<div class="item-title">基本信息</div>
+								</div>
+							</a>
+							<a class="item-content item-link" href="#wode_mimaxiugai">
+								<div class="item-media"><img src="images/password.png" ></div>
+								<div class="item-inner">
+									<div class="item-title">修改密码</div>
+								</div>
+							</a>
+							<a class="item-content item-link" href="#wode_gonggao">
+								<div class="item-media"><img src="images/message.png" ></div>
+								<div class="item-inner" id="xt_notice">
+									<div class="item-title">系统公告</div>
+								</div>
+							</a>
+							<a class="item-content item-link" href="#shouye" onclick="logout()">
+								<div class="item-media"><img src="images/message.png" ></div>
+								<div class="item-inner">
+									<div class="item-title" id="exit" >退出系统</div>
+								</div>
+							</a>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+			<!--我的 绑定银行卡-->
+			<!--<div class="page" id="wode_bangdingyinghangka">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#wode"></a>
+					<h1 class="title">绑定银行卡</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-30">真实姓名：</div>
+								<div class="col-60"><input placeholder="请输入开户名" type="text" /></div>
+							</li>
+							<li class="row">
+								<div class="col-30">开户银行：</div>
+								<div class="col-60"><input placeholder="请输入开户行" type="text" /></div>
+							</li>
+							<li class="row">
+								<div class="col-30">支行网点：</div>
+								<div class="col-60"><input placeholder="请输入所属分行" type="text" /></div>
+							</li>
+							<li class="row">
+								<div class="col-30">银行卡号：</div>
+								<div class="col-60"><input placeholder="请输入银行卡号" type="text" /></div>
+							</li>
+						</ul>
+						<span class="tijiao">绑定银行卡</span>
+					</div>
+				</div>
+			</div>-->
+			<!--我的 基本信息-->
+			<div class="page" id="wode_jibenxinxi">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#wode"></a>
+					<h1 class="title">个人资料</h1>
+				</header>
+								<div class="content">
+					<div class="content-block">
+						<ul id="wode-xinxi">
+							<li class="row no-gutter">
+								姓名: <span>张**</span>
+							</li>>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--我的 家庭地址-->
+			<!--<div class="page" id="wode_jiatingdizhi">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#wode"></a>
+					<a href="#dizhi_tianjia" class="icon iconfont icon-jia pull-right"></a>
+					<h1 class="title">家庭地址</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-80">
+									<h3>celina<span>15061986196</span></h3>
+									<p>江苏南京浦口区大华锦绣华城华亭苑内294号商务别墅5楼</p>
+								</div>
+								<div class="col-20">
+									<a class="icon icon-remove"></a>
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-80">
+									<h3>celina<span>15061986196</span></h3>
+									<p>江苏南京浦口区大华锦绣华城华亭苑内294号商务别墅5楼</p>
+								</div>
+								<div class="col-20">
+									<a class="icon icon-remove"></a>
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-80">
+									<h3>celina<span>15061986196</span></h3>
+									<p>江苏南京浦口区大华锦绣华城华亭苑内294号商务别墅5楼</p>
+								</div>
+								<div class="col-20">
+									<a class="icon icon-remove"></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>-->
+			<!--我的 家庭地址  添加-->
+			<!--<div class="page" id="dizhi_tianjia">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#wode_jiatingdizhi"></a>
+					
+					<h1 class="title">添加家庭地址</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row">
+								<div class="col-20">
+									姓名
+								</div>
+								<div class="col-80">
+									<input placeholder="请输入姓名" type="text" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-20">
+									电话
+								</div>
+								<div class="col-80">
+									<input placeholder="请输入电话" type="number" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-20">
+									邮编
+								</div>
+								<div class="col-80">
+									<input placeholder="请输入邮编" type="number" />
+								</div>
+							</li>
+							<li class="row">
+								<div class="col-20">
+									地址
+								</div>
+								<div class="col-80">
+									<input placeholder="请输入地址" type="text" />
+								</div>
+							</li>
+						</ul>
+						<span class="tijiao">保存</span>
+					</div>
+				</div>
+			</div>-->
+			<!--我的 修改密码-->
+			<div class="page" id="wode_mimaxiugai">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#wode"></a>
+					<h1 class="title">忘记密码</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul>
+							<li class="row no-gutter" style="display: none;">
+								<div class="col-10"><i class="iconfont icon-shouji"></i></div>
+								<div class="col-90"><input placeholder="请输入手机号码" type="number" /></div>
+							</li>
+							<li class="row no-gutter">
+								<div class="col-10"><i class="iconfont icon-mima1"></i></div>
+								<div class="col-90"><input placeholder="请输入原密码" type="password" id="pwd"/></div>
+							</li>
+							<li class="row no-gutter">
+								<div class="col-10"><i class="iconfont icon-mima"></i></div>
+								<div class="col-90"><input placeholder="请输入新密码" type="password" id="newpassword"/></div>
+							</li>
+							<li class="row no-gutter">
+								<div class="col-10"><i class="iconfont icon-mima"></i></div>
+								<div class="col-90"><input placeholder="请确认新密码" type="password" id="newpassword2"/></div>
+							</li>
+							<li class="row no-gutter" style="display: none;">
+								<div class="col-10"><i class="iconfont icon-system-safe"></i></div>
+								<div class="col-50"><input placeholder="请输入图形验证码" type="text" /></div>
+								<div class="col-40">
+									<img class="yanzhengma" onclick="javascript:yanzhengma(this);" src="http://apistore.51daniu.cn/rest/index.php?c=index&amp;a=checkcode&amp;t=1467090973" alt="">
+								</div>
+							</li>
+							<li class="row no-gutter" style="display: none;">
+								<div class="col-10"><i class="iconfont icon-mima1"></i></div>
+								<div class="col-50"><input placeholder="请输入手机验证码" type="text" /></div>
+								<div class="col-40">
+									<span>获取验证码</span>
+								</div>
+							</li>
+						</ul>
+						<span class="tijiao"   id="sub" style="text-align: center;">确认修改</span>
+					</div>
+				</div>
+			</div>
+			<!--我的 系统公告-->
+			<div class="page" id="wode_gonggao">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#wode"></a>
+					<h1 class="title">系统公告</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<ul id="wode_gonggaolist">
+							<!--<li class="row no-gutter">
+								<div class="col-75">【公告】零网移动端上线啦</div>
+								<div class="col-25">[2017-08-05]</div>
+							</li>
+							<li class="row no-gutter">
+								<div class="col-75">【公告】零网移动端上线啦</div>
+								<div class="col-25">[2017-08-05]</div>
+							</li>
+							<li class="row no-gutter">
+								<div class="col-75">【公告】零网移动端上线啦</div>
+								<div class="col-25">[2017-08-05]</div>
+							</li>
+							<li class="row no-gutter">
+								<div class="col-75">【公告】零网移动端上线啦</div>
+								<div class="col-25">[2017-08-05]</div>
+							</li>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--我的 系统公告详情-->
+			<div class="page" id="wode_gonggaoxiangqing">
+				<header class="bar bar-nav">
+					<a class="icon icon-left pull-left" href="#wode_gonggao"></a>
+					<h1 class="title">系统公告</h1>
+				</header>
+				<div class="content">
+					<div class="content-block">
+						<h2 id="gonggaoHead">零网上线啦</h2>
+						<h6 id="gongaotime">[2017-09-09]</h6>
+						<p id="gongaocont">较好的看见圣诞节较</p>
+						<div class="row">
+							<div class="col-50">
+								<p >上一篇：<span id="gonggaoxq_former">等你哈萨克较好的看见爱上框架</span></p>
+							</div>
+							<div class="col-50">
+								<p >下一篇：<span id="gonggaoxq_later">等你哈萨克较好的看见爱上</span></p>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='js/jquery.min.js' charset='utf-8'></script>
+		<script type='text/javascript' src='js/sm.js' charset='utf-8'></script>
+		<script type='text/javascript' src='js/sm-extend.js' charset='utf-8'></script>
+		<script type="text/javascript" src="js/swiper-3.4.2.jquery.min.js" charset='utf-8'></script>
+		<script type="text/javascript" src="js/xcConfirm.js" charset='utf-8'></script>
+		<script type='text/javascript' src='js/public.js' charset='utf-8'></script>
+		<script type='text/javascript' src='js/main.js' charset='utf-8'></script>
+		<script type='text/javascript' src='js/init.js' charset='utf-8'></script>
+		<script type="text/javascript">
+			$.init()
+		</script>
+	</body>
+</html>

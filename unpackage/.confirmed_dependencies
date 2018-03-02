@@ -1,0 +1,91 @@
+{
+	"index.html": {
+		"resources": [
+			"images/login_01.jpg",
+			"images/video_03.png",
+			"js/public.js",
+			"images/faxian_banji.png",
+			"images/jiazhang.png",
+			"images/faxian_jiaoyuju.png",
+			"images/icon-3.png",
+			"images/yingyong_15.png",
+			"images/yingyong_02.png",
+			"css/swiper-3.4.2.min.css",
+			"css/sm.min.css",
+			"images/logo.png",
+			"images/home.png",
+			"images/icon-4.png",
+			"images/xuanzetupian.png",
+			"images/icon-1.png",
+			"images/bank.png",
+			"js/swiper-3.4.2.jquery.min.js",
+			"iconfont/iconfont.css",
+			"js/main.js",
+			"images/yingyong_11.png",
+			"js/sm.js",
+			"images/jianjietupian.png",
+			"css/style.css",
+			"images/yingyong_07.png",
+			"images/yingyong_05.png",
+			"images/xueshen.png",
+			"images/faxian_xuexiao.png",
+			"images/laoshi.png",
+			"images/icon-2.png",
+			"css/font.css",
+			"images/5.mp4",
+			"images/guanliyuan.png",
+			"images/sjpb.jpg",
+			"images/zi.png",
+			"images/jiaoyuju.png",
+			"js/zepto.min.js",
+			"images/message.png",
+			"images/password.png",
+			"js/sm-extend.js",
+			"images/yingyong_12.png",
+			"css/sm-extend.min.css",
+			"js/init.js",
+			"js/jquery.min.js",
+			"css/xcConfirm.css",
+			"js/xcConfirm.js",
+			"css/xcConfirm_web.css",
+			"xuesheng.html",
+			"images/images/my_background_02.jpg",
+			"images/xiaxia.png",
+			"js/common.js",
+			"images/banner.png"
+		],
+		"refer": [
+			"webview_embed.html"
+		]
+	},
+	"xuesheng.html": {
+		"resources": [
+			"iconfont/iconfont.woff",
+			"js/main.js",
+			"js/jquery.min.js",
+			"js/init.js",
+			"js/public.js",
+			"js/sm.js",
+			"css/style.css",
+			"css/sm.min.css",
+			"css/swiper-3.4.2.min.css",
+			"css/font.css",
+			"js/zepto.min.js",
+			"js/xcConfirm.js",
+			"css/xcConfirm_web.css",
+			"js/swiper-3.4.2.jquery.min.js",
+			"js/sm-extend.js",
+			"css/sm-extend.min.css",
+			"iconfont/iconfont.css",
+			"index.html"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"webview_embed.html": {
+		"resources": [
+			"css/common.css"
+		]
+	}
+}

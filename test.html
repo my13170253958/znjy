@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="heh">
+			<video width="800" height="200"  loop="true" src="images/5.mp4"></video>
+		</div>
+		<p>xiaoshi</p>
+		<h1>kaishi</h1>
+	</body>
+	<script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+	<script>
+		$('p').click(function(){
+			 $("video")[0].pause();
+//			$('#heh').hide()
+		})
+		$('h1').click(function(){
+//			$("video")[0].play()
+			$("video")[0].play()
+			$('#heh').show()
+		})
+	</script>
+</html>

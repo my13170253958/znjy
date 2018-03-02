@@ -1,0 +1,18 @@
+/*垂直居中*/
+.verticalAlign{ vertical-align:middle; display:inline-block; height:100%; margin-left:-1px;}
+
+.xcConfirm .xc_layer{position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #666666; opacity: 0.5; z-index: 2147000000;}
+.xcConfirm .popBox{position: fixed; left: 55%; top: 50%; background-color: #ffffff; z-index: 2147000001; width: 370px; min-height: 200px; margin-left: -285px; margin-top: -150px; border-radius: 5px; font-weight: bold; color: #535e66;}
+.xcConfirm .popBox .ttBox{height: 30px; line-height: 30px; padding: 14px 30px;position: relative;}
+.xcConfirm .popBox .ttBox .tt{font-size: 18px; display: block; float: left;width: 120px;height: 120px;background-color: #1abc9c;color: #ffffff;border-radius: 50%;position: absolute;line-height: 120px;text-align: center;top:-60px;left: 125px;}
+.xcConfirm .popBox .ttBox .clsBtn{display: block; cursor: pointer; width: 12px; height: 12px; position: absolute; top: 22px; right: 30px; background: url(../img/tanchu.png) -48px -96px no-repeat;}
+.xcConfirm .popBox .txtBox{min-height: 40px; overflow: hidden;text-align: center;line-height: 20px;padding: 0 15px;margin-top: 20px;}
+.xcConfirm .popBox .txtBox .bigIcon{display: inline-block;margin-right: 20px; width: 48px; height: 48px; background-image: url(../img/tanchu.png); background-repeat: no-repeat; background-position: 48px 0;}
+.xcConfirm .popBox .txtBox p{display: inline-block;overflow-x: hidden;overflow-y: auto;margin: 20px;padding: 0;}
+.xcConfirm .popBox .txtBox p input{width: 364px; height: 30px; border: solid 1px #eef0f1; font-size: 18px; margin-top: 6px;}
+.xcConfirm .popBox .btnArea{margin-bottom: 20px;}
+.xcConfirm .popBox .btnGroup{width:370px}
+.xcConfirm .popBox .btnGroup .sgBtn{margin:14px auto;}
+.xcConfirm .popBox .sgBtn{display: block; cursor: pointer; width: 100px; height: 35px; line-height: 35px; text-align: center; color: #FFFFFF;}
+.xcConfirm .popBox .sgBtn.ok{background-color: #1abc9c; color: #FFFFFF;margin: 0 auto;padding: 0;}
+.xcConfirm .popBox .sgBtn.cancel{background-color: #1abc9c; color: #FFFFFF;}
